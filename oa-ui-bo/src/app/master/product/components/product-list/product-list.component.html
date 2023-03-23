@@ -1,0 +1,50 @@
+<div fxLayout="row" fxLayoutWrap="wrap">
+	<div fxFlex.gt-sm="100%" fxFlex="100">
+  
+	  <mat-card>
+		<mat-card-title style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: x-large;" align="center">
+		LIST OF PRODUCT
+
+		<mat-card-actions align="end">
+                    <button mat-raised-button color="primary" class="primary" (click)="addProduct()">NEW PRODUCT</button>
+                </mat-card-actions>
+		</mat-card-title>
+		<mat-card-content>
+  
+		  <div>
+
+		<div class="card-container" *ngFor="let item of rows">
+			<mat-card>
+			  <mat-card-header>
+				<mat-card-title style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: x-large;">{{ item.productname }}</mat-card-title>
+			  </mat-card-header>
+			  <div class="container">
+			  <img [src]="item.imageModel" width="20%" height="20%" alt="UPLOAD IMAGE" >
+			  <div class="edit" style="text-align: end;margin-top: -70px;">
+				<button mat-raised-button color="primary" class="primary" >EDIT</button>
+				<mat-icon>edit</mat-icon>
+			  </div>
+			  <br>
+			  <div class="edit" style="text-align: end;">
+				<button mat-raised-button color="primary" class="primary" (click)="delProdid(item.prodid)">DELETE</button>
+				<mat-icon (click)="delProdid(item.prodid)">delete</mat-icon>
+			  </div>
+			</div>
+		
+			  <mat-card-content>
+				<p style="font-size: larger;"><span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: large;">SALE PRICE:</span> {{ item.salePrice }}</p>
+				<p style="font-size: larger;"><span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: large;">UNIT:</span> {{ item.unit }}</p>
+				<p style="font-size: larger;"><span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: large;">PRODUCT DESCRIPTION:</span> {{ item.productDesc }}</p>
+				<p style="font-size: larger;"><span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: large;">PRODUCT HSC SAC:</span> {{ item.productHscSac }}</p>
+				<p style="font-size: larger;"><span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: large;">TAX RATE:</span> {{ item.taxrate }}</p>
+				<p style="font-size: larger;"><span style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: large;">TAX TYPE:</span> {{ item.taxtype }}</p>
+			  </mat-card-content>
+			</mat-card>
+		  </div>
+  
+	  </div>
+		</mat-card-content>
+	  </mat-card>
+	</div>
+  </div>
+  

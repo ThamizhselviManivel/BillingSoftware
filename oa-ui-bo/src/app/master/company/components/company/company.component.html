@@ -1,0 +1,65 @@
+<div>
+
+	<mat-card>
+  
+	  <mat-card-title>EDIT COMPANY DETAILS</mat-card-title>
+  
+	  <mat-card-content>
+  
+		<div fxLayout="row" fxLayoutAlign="start center">
+  
+		  <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+			<input type="text"  matInput placeholder="BUSINESS NAME"  [(ngModel)]="rowss.businessname" >
+		  </mat-form-field>
+  
+		  <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+			<input type="text"  matInput placeholder="BUSINESS DESC" [(ngModel)]="rowss.businessdesc" >
+		  </mat-form-field>
+
+		  <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+			<input type="text"  matInput placeholder="EMAIL-ID" [(ngModel)]="rowss.email" >
+		  </mat-form-field>
+		  
+		  <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+			<input type="tel" onKeyPress="if(this.value.length==10) return false;"  matInput placeholder="PH NUMBER" [(ngModel)]="rowss.phnumber" >
+		  </mat-form-field>
+  
+		</div>
+		<br>
+		<br>
+  
+		<div fxLayout="row" fxLayoutAlign="start center">
+		  <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+			<input matInput placeholder="GST NO" [(ngModel)]="rowss.gstno">
+		  </mat-form-field>
+  
+		  <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+			<input type="text" matInput placeholder="ADDRESS" [(ngModel)]="rowss.address">
+		  </mat-form-field>
+  
+		  <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+			<input type="text" matInput placeholder="BUSINESS TYPE" [(ngModel)]="rowss.businesstype">  
+		  </mat-form-field>
+  
+		  <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+			<input type="text" matInput placeholder="BUSINESS CATEGORY" [(ngModel)]="rowss.businesscategory">
+		  </mat-form-field>
+  
+		</div>
+		<br>
+		<br>
+	  </mat-card-content>
+  
+	  <mat-card-content >
+  
+		<br><br>
+		<mat-card-actions align="end" >
+		  <button mat-raised-button color="primary" class="primary" (click)="save(rowss.businessname,rowss.businessdesc,rowss.email,rowss.phnumber,
+		  rowss.gstno,rowss.address,rowss.businesstype,rowss.businesscategory)">SAVE</button>
+		</mat-card-actions>
+  
+	  </mat-card-content>
+  
+	</mat-card>
+  
+  </div>

@@ -1,0 +1,117 @@
+<div fxFlex.gt-sm="100%" fxFlex="100" >
+    <mat-card >
+        <mat-card-title>
+           CUSTOMER DETAIL
+        </mat-card-title>
+     <br>
+
+				<mat-card-content>
+				<div fxLayout="row" fxLayoutAlign="start center">
+
+					<mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+					  <input  matInput placeholder="CUSTOMER NAME*"  [(ngModel)]="customer.customerName">
+					</mat-form-field>
+
+					<mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+					  <input type="tel" onKeyPress="if(this.value.length==10) return false;" matInput placeholder="MOBILE NO*"  [(ngModel)]="customer.mobileNo">
+					</mat-form-field>
+
+					<mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+					  <input  matInput placeholder="CUSTOMER MAIL"  [(ngModel)]="customer.customerMail">
+					</mat-form-field>
+
+					<mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+					  <input matInput  [matDatepicker]="fromDate" placeholder="Date*" [(ngModel)]="customer.salesDate">
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+          <mat-datepicker #fromDate></mat-datepicker>
+					</mat-form-field>
+
+				  </div>
+                  <br>
+				</mat-card-content>
+
+
+                <mat-card-title>
+                    PRODUCT DETAILS
+               </mat-card-title>
+               <br>
+		       <br>
+<mat-card-content>
+
+    <div class="plusButton">
+        <button mat-mini-fab color="primary" (click)="addRow()" aria-label="Example icon button with a plus one icon">
+          <mat-icon>plus_one</mat-icon>
+        </button>
+      </div>
+
+      <table id="buyerTable">
+
+        <thead>
+          <tr>
+            <td class="tdBorderEmail"><label>PRODUCT NAME</label></td>
+            <td class="tdBorderEmail"><label>UNITS</label></td>
+            <td class="tdBorderEmail"><label>PRICE</label></td>
+            <td class="tdBorderEmail"><label>GST</label></td>
+            <td class="tdBorderEmail"><label>TAX</label></td>
+            <td class="tdBorderEmail"><label>TOTAL</label></td>
+            <td class="tdBorderEmail" style="width:47%;"><label>Action</label></td>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let dynamic of dynamicArray; let i = index">
+
+            <td class="d-flex">
+              <input  type="text"  placeholder="product name"  [(ngModel)]="dynamic.productName"/>
+              <button id="buyerButton" >
+                <mat-icon color="primary">search</mat-icon>
+              </button>
+            </td>
+
+            <td>
+              <input  type="text"  placeholder="unit" [(ngModel)]="dynamic.unit"/>
+            </td>
+
+            <td>
+              <input type="text"  placeholder="price" [(ngModel)]="dynamic.price"/>
+            </td>
+
+            <td>
+              <input type="text"  placeholder="gst" [(ngModel)]="dynamic.gst"/>
+            </td>
+
+            <td>
+              <input type="text"  placeholder="tax" [(ngModel)]="dynamic.tax"/>
+            </td>
+
+            <td>
+              <input type="text"  placeholder="total"/>
+            </td>
+
+            <td style="text-align :center; width:50%;">
+              <div>
+                <button mat-icon-button color="primary" (click)="deleteRow(i)" placeholder="Delete">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </td>
+
+        </tbody>
+      </table>
+
+      <mat-card-actions align="end">
+        <button mat-raised-button color="primary" class="primary" (click)="saveAll()">save</button>
+      </mat-card-actions>
+</mat-card-content>
+
+<div class="scanner-container">
+  <video id="barcode-scanner" autoplay></video>
+  <div class="scanner-overlay"></div>
+  <p class="scanner-result">Scanned Barcode: {{ barcodeValue }}</p>
+</div>
+
+    </mat-card>
+</div>
+

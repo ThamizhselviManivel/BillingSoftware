@@ -1,0 +1,103 @@
+<!-- <div fxLayout="row" fxLayoutWrap="wrap">
+	<div fxFlex.gt-sm="100%" fxFlex="100">
+  
+	  <mat-card>
+		<mat-card-title style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: larger;">
+		ADD NEW PRODUCT
+		</mat-card-title>
+	  </mat-card>
+	</div>
+  </div>
+   -->
+
+   
+    <div>
+
+      <mat-card>
+    
+        <mat-card-title>ADD NEW PRODUCT</mat-card-title>
+    
+        <mat-card-content>
+    
+          <div fxLayout="row" fxLayoutAlign="start center">
+    
+            <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+              <input matInput placeholder="PRODUCT NAME*" [(ngModel)]="products.productname">
+            </mat-form-field>
+    
+            <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+              <input matInput placeholder="PRODUCT HSC SAC*" [(ngModel)]="products.productHscSac">
+            </mat-form-field>
+    
+            <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+              <input matInput placeholder="PRODUCT DESCRIPTION" [(ngModel)]="products.productDesc">
+            </mat-form-field>
+    
+         
+            <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+              <input type="number" matInput placeholder="UNIT*" [(ngModel)]="products.unit">
+            </mat-form-field>
+    
+          </div>
+          <br>
+          <br>
+    
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+              <input type="number" matInput placeholder="TAX RATE*" [(ngModel)]="products.taxrate" >
+            </mat-form-field>
+    
+            <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+              <input type="number" matInput placeholder="SALE PRICE*" [(ngModel)]="products.salePrice">
+            </mat-form-field>
+    
+            <mat-form-field class="ml-xs mr-xs" style="width: 25%;">
+              <input type="number" matInput placeholder="TAX TYPE*" [(ngModel)]="products.taxtype">  
+            </mat-form-field>
+    
+    
+          </div>
+
+          <div fxLayout="row" fxLayoutAlign="start center">
+
+            <form>
+              <div class="form-group">
+                 <input type="file" (change)="onImageUpload($event)"> 
+                <button mat-raised-button color="primary" class="primary" (click)="imageUploadAction()">UPLOAD IMAGE</button>
+                 
+                  <!-- <input type="button" (click)="imageUploadAction()" value="Upload Image" class="btn1"> -->
+              </div>
+      
+      
+              <div>
+                  <output *ngIf=successResponse class="success"><b>{{successResponse}}</b></output>
+              </div>
+              <br>
+              <div class="form-group">
+                <!-- <input type="text" id="image" placeholder="Search Image" [(ngModel)]="image" name="image" /> -->
+                <!-- <input type="button" (click)="viewImage()" value="View Image" class="btn1"> -->
+                <button mat-raised-button color="primary" class="primary" (click)="viewImage()">VIEW IMAGE</button>
+            </div>
+      
+            <div *ngIf=dbImage>
+                <img [src]="dbImage"  width="40%" height="20%" alt="Image" />
+            </div>
+      
+          </form>
+
+          </div>
+    
+        </mat-card-content>
+    
+        <mat-card-content >
+    
+          <br><br>
+          <mat-card-actions align="end" >
+            <button mat-raised-button color="primary" class="primary" (click)="save()">SAVE</button>
+          </mat-card-actions>
+    
+        </mat-card-content>
+    
+      </mat-card>
+    
+    </div>

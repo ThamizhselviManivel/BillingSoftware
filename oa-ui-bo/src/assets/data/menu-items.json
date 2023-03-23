@@ -1,0 +1,6 @@
+[
+  { "state": "home", "functionality": "DASH", "feature": "DASH", "name": "Dashboard", "type": "link", "icon": "","directLink": "Y" },
+  { "state": "signup", "functionality": "SIGNUP", "feature": "LIST", "name": "Signup", "type": "link","icon": "","directLink": "Y" },
+  { "state": "product", "functionality": "PRODUCT", "feature": "LIST", "name": "Product", "type": "link","icon": "","directLink": "Y" },
+  { "state": "sales", "functionality": "SALES", "feature": "LIST", "name": "Sales", "type": "link","icon": "","directLink": "Y" }
+]
